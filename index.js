@@ -1,19 +1,23 @@
+// Asynchronous
 console.log('Before');
-const user = getUser(1, (user) => {
-    console.log('User', user);
-
-    // Get the repositories
+getUser(1, (user) => {
     gerRepositories(user.githubUsername, (repos) => {
-        console.log('Repos', repos);
+        getCommits(repo, (commits) => {
+            // CALLBACK HELL
+
+        });
     });
 
 });
 console.log('After');
 
-// Three patterns to deal with asynchonous code. 
-// Callbacks
-// Promises
-// Async/ await
+// Synchronous 
+console.log('before');
+const user = getUser(1);
+const repos = gerRepositories(user.githubUsername);
+const commits = getCommits(repos[0]);
+console.log(After);
+
 
 
 function getUser(id, Callbacks) {
