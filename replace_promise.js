@@ -1,7 +1,7 @@
 console.log('Before');
 
 getUser(1, (user) => {
-    gerRepositories(user.githubUsername, (repos) => {
+    getRepositories(user.githubUsername, (repos) => {
         getCommits(repos[0], (commits) => {
             console.log(commits);
         })
@@ -42,12 +42,11 @@ function getCommits(repo) {
 
 
 
-
 // -------------------- Previous Nested Callback hell
 // console.log('Before');
 
 // getUser(1, (user) => {
-//     gerRepositories(user.githubUsername, (repos) => {
+//     getRepositories(user.githubUsername, (repos) => {
 //         getCommits(repos[0], (commits) => {
 //             console.log(commits);
 //         });
