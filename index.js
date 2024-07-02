@@ -8,7 +8,7 @@ function getRepositories(user) {
 }
 
 function getCommits(repos){
-    getCommits(repo, displayCommits);
+    getCommits(repos, displayCommits);
 }
 
 function displayCommits(commits){
@@ -16,18 +16,30 @@ function displayCommits(commits){
 }
 
 
-
-
-function getUser(id, Callbacks) {
+function getUser(id, callback) {
     setTimeout(() => {
         console.log('reading a user from a database');
-        Callbacks({ id: id, githubUsername: 'nasim'});
+        callback({ id: id, githubUsername: 'nasim'});
     }, 2000);
 }
 
-function gerRepositories(username, Callbacks) {
+function getRepositories(username, callback) {
     setTimeout(() => {
         console.log('calling github api...');
-        Callbacks(['repo1', 'repo2', 'repo3']);
+        callback(['repo1', 'repo2', 'repo3']);
     }, 2000);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
