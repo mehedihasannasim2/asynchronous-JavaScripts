@@ -8,7 +8,7 @@ function getRepositories(user) {
 }
 
 function getCommits(repos){
-    getCommits(repos, displayCommits);
+    getCommits(repos[0], displayCommits);
 }
 
 function displayCommits(commits){
